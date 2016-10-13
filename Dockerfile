@@ -1,6 +1,8 @@
 FROM timhaak/base
 MAINTAINER Tim Haak <tim@haak.co>
 
+RUN useradd -M -r -s /usr/sbin/nologin -u 1000 transmission
+
 COPY settings.json /var/lib/transmission-daemon/info/settings.json
 
 RUN add-apt-repository -y ppa:transmissionbt/ppa && \
@@ -23,4 +25,5 @@ EXPOSE 9091 45555
 ENV USERNAME="transmission" \
     PASSWORD="password"
 
+USER transmission
 CMD ["/start.sh"]
