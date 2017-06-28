@@ -1,14 +1,23 @@
-# docker transmission
+# Docker Transmission
 
 This is a Dockerfile to set up "Transmission" - (https://www.transmissionbt.com/)
 
-Build from docker file
+## Build from docker file
 
 ```
-git clone git@github.com:timhaak/docker-transmission.git
+git clone git@github.com:dhensen/docker-transmission.git
 cd docker-transmission
 docker build -t transmission .
 ```
 
-docker run -d -v /*your_watch_dir*:/watch -v /*your_final_dir:/downloads -v /*your_incomplete_dir:/incomplete -v /*your_config_location*:/config -p your_external_port:45555 -p web_interface_port:9091 -e "USERNAME=username" -e "PASSWORD=password"
+## Run transmission
 
+```
+cd docker-transmission
+export TRANSMISSION_EXTERNAL_PORT=45555
+export TRANSMISSION_WEB_PORT=9091
+docker run -d -v $(pwd)/watch:/watch \
+    -v $(pwd)/complete:/downloads \
+    -v $(pwd)/incomplete:/incomplete -v /*your_config_location*:/config -p $TRANSMISSION_EXTERNAL_PORT:45555 -p $TRANSMISSION_WEB_PORT:9091 -e "USERNAME=username" -e "PASSWORD=password"
+
+```
