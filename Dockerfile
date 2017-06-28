@@ -1,5 +1,6 @@
 FROM timhaak/base
-MAINTAINER Tim Haak <tim@haak.co>
+
+LABEL maintainer "Dino Hensen <dino.hensen@gmail.com>"
 
 RUN useradd -M -r -s /usr/sbin/nologin -u 1000 transmission
 
