@@ -1,5 +1,5 @@
 # FROM timhaak/base
-FROM armv7/armhf-ubuntu:17:04
+FROM armv7/armhf-ubuntu:17.04
 
 LABEL maintainer "Dino Hensen <dino.hensen@gmail.com>"
 
