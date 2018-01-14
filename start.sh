@@ -22,4 +22,4 @@ fi
 ln -sf /config/settings.json /var/lib/transmission-daemon/info/settings.json
 ln -sf /config/settings.json /etc/transmission-daemon/settings.json
 
-exec /usr/local/bin/su-exec transmission /usr/bin/transmission-daemon --foreground --config-dir /config --log-info --username ${USERNAME} --peerport 45555 --password ${PASSWORD} --auth --watch-dir /watch --download-dir /downloads --incomplete-dir /incomplete
+exec transmission /usr/bin/transmission-daemon --foreground --config-dir /config --log-info --username ${USERNAME} --peerport 45555 --password ${PASSWORD} --auth --watch-dir /watch --download-dir /downloads --incomplete-dir /incomplete
