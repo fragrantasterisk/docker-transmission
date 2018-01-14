@@ -3,9 +3,6 @@ FROM armv7/armhf-ubuntu:16.10
 
 LABEL maintainer "Dino Hensen <dino.hensen@gmail.com>"
 
-ADD su-exec /usr/local/bin/su-exec
-RUN chmod +x /usr/local/bin/su-exec
-
 RUN apt-get update && \
     apt-get -y install software-properties-common && \
     apt-get -y install transmission-daemon ca-certificates wget tar curl unrar-free procps && \
